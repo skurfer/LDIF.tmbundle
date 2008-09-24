@@ -9,7 +9,7 @@
 	<key>scope</key>
 	<string>text.ldif</string>
 	<key>tabTrigger</key>
-	<string>av</string>
+	<string>:</string>
 	<key>uuid</key>
 	<string>4B28B743-9B44-4144-BFB1-2F67A9DD1297</string>
 </dict>

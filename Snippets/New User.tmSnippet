@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>givenName: ${1:Rob}
-sn: ${2:McBroom}
-uid: ${1/^.*?(\w).*$/\L$1/}${2/^.*?(\S+).*$/\L$1/}
-cn: $2, $1
-displayName: $1 $2
-mail: ${1/^.*?(\S+).*$/\L$1/}.${2/^.*?(\S+).*$/\L$1/}@${3:gatech.edu}
-</string>
+	<string>dn: uid=$5,ou=users,dc=${1:adesa},dc=${2:com}
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: adesaPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+givenName: ${3:First}
+sn: ${4:Last}
+uid: ${5:${3/^.*?(\w).*$/\L$1/}${4/^.*?(\S+).*$/\L$1/}}
+cn: $3 $4
+displayName: $3 $4
+uidNumber: ${6:`/Users/rob/Coding/minfo/nextuid`}
+gidNumber: $6
+mail: ${3/^.*?(\S+).*$/\L$1/}.${4/^.*?(\S+).*$/\L$1/}@$1.$2
+homeDirectory: /home/$5
+loginShell: /bin/${7:bash}
+shadowLastChange: 0
+#shadowMax: 90
+userPassword: ${8:[type password then hit CTRL-P]}
+#sshPublicKey: 
+$0</string>
 	<key>name</key>
 	<string>New User</string>
 	<key>scope</key>
