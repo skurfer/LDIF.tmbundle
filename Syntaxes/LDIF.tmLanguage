@@ -7,7 +7,7 @@
 		<string>ldif</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>^$</string>
+	<string>^dn:</string>
 	<key>foldingStopMarker</key>
 	<string>^$</string>
 	<key>keyEquivalent</key>
@@ -16,6 +16,12 @@
 	<string>LDIF</string>
 	<key>patterns</key>
 	<array>
+		<dict>
+			<key>match</key>
+			<string>^dn:.*$</string>
+			<key>name</key>
+			<string>support.distinguishedName.ldif</string>
+		</dict>
 		<dict>
 			<key>match</key>
 			<string>^(?=[^#])\S+:</string>
