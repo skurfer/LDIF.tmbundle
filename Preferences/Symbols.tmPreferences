@@ -5,13 +5,15 @@
 	<key>name</key>
 	<string>Symbols</string>
 	<key>scope</key>
-	<string>support.distinguishedName.ldif</string>
+	<string>entity.distinguishedName.ldif</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
 		<integer>1</integer>
 		<key>symbolTransformation</key>
-		<string>s/^dn: (.*)$/$1/</string>
+		<string>
+		s/^r?dn: (.*)$/$1/;
+	</string>
 	</dict>
 	<key>uuid</key>
 	<string>DE4D9A5C-3A76-452D-ADF0-E33B43EEA1DC</string>

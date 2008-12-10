@@ -7,7 +7,7 @@
 		<string>ldif</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>^dn:</string>
+	<string>^r?dn:</string>
 	<key>foldingStopMarker</key>
 	<string>^$</string>
 	<key>keyEquivalent</key>
@@ -18,19 +18,19 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>^dn:.*$</string>
+			<string>^r?dn:.*$</string>
 			<key>name</key>
-			<string>support.distinguishedName.ldif</string>
+			<string>entity.distinguishedName.ldif</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^(?=[^#])\S+:</string>
+			<string>^(?=[^#])\w+:[:&lt;]?</string>
 			<key>name</key>
 			<string>keyword.attribute.ldif</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;=:\s)</string>
+			<string>(?&lt;=\w:\s)</string>
 			<key>end</key>
 			<string>(?=^[\S\n])</string>
 			<key>name</key>
@@ -46,10 +46,50 @@
 			</array>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>(?&lt;=\w::\s)</string>
+			<key>end</key>
+			<string>(?=^[\S\n])</string>
+			<key>name</key>
+			<string>storage.value.base64.ldif</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\s+(?=\n)</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?&lt;=:&lt;\s)</string>
+			<key>end</key>
+			<string>(?=^[\S\n])</string>
+			<key>name</key>
+			<string>markup.underline.link.ldif</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\s+(?=\n)</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>(#).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.number-sign.ldif</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^-$\n?</string>
+			<key>name</key>
+			<string>support.separator.ldif</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
