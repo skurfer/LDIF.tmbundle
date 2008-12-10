@@ -39,6 +39,12 @@
 			<array>
 				<dict>
 					<key>match</key>
+					<string>\s?</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\s+(?=\n)</string>
 					<key>name</key>
 					<string>invalid.illegal</string>
@@ -56,6 +62,12 @@
 			<array>
 				<dict>
 					<key>match</key>
+					<string>\s?</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\s+(?=\n)</string>
 					<key>name</key>
 					<string>invalid.illegal</string>
@@ -71,6 +83,12 @@
 			<string>markup.underline.link.ldif</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>match</key>
+					<string>\s?</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
 				<dict>
 					<key>match</key>
 					<string>\s+(?=\n)</string>
