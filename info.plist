@@ -9,7 +9,7 @@
 	<key>description</key>
 	<string>This bundle supports the LDAP Data Interchange Format and other LDAP related tasks.</string>
 	<key>name</key>
-	<string>LDAP</string>
+	<string>LDIF</string>
 	<key>ordering</key>
 	<array>
 		<string>D8D20662-03C0-4303-A431-EB2427D97F0F</string>
