@@ -18,15 +18,44 @@
 	<array>
 		<dict>
 			<key>match</key>
+			<string>(#).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.number-sign.ldif</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>^r?dn:.*$</string>
 			<key>name</key>
 			<string>entity.distinguishedName.ldif</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^(?=[^#])\w+:[:&lt;]?</string>
+			<string>^(changetype|add|replace|delete|replica)(?=:)</string>
 			<key>name</key>
 			<string>keyword.attribute.ldif</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?&lt;=changetype:\s)(add|modify)</string>
+			<key>end</key>
+			<string>(?=^[\S\n])</string>
+			<key>name</key>
+			<string>keyword.value.ldif</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\s+(?=\n)</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\w+(?=:[:&lt;]?)</string>
+			<key>name</key>
+			<string>variable.attribute.ldif</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -78,12 +107,6 @@
 					<string>invalid.illegal</string>
 				</dict>
 			</array>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(#).*$\n?</string>
-			<key>name</key>
-			<string>comment.line.number-sign.ldif</string>
 		</dict>
 		<dict>
 			<key>match</key>

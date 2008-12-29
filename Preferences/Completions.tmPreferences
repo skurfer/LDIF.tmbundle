@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completions</string>
+	<key>settings</key>
+	<dict>
+		<key>completions</key>
+		<array>
+			<string>changetype</string>
+			<string>modify</string>
+			<string>add</string>
+			<string>delete</string>
+			<string>replace</string>
+			<string>objectClass</string>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>114F0B11-2C1E-48AC-9FDD-274D1A7BDB80</string>
+</dict>
+</plist>
