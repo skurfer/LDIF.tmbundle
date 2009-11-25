@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env python
+
+import re
+from base64 import b64decode
+import os
+import sys
+
+attrValPattern = re.compile(r'(\S+)::\s(.*)')
+
+attrVal = os.getenv('TM_CURRENT_LINE')
+m = attrValPattern.match(attrVal)
+if m:
+    sys.stdout.write(m.group(1) + ': ' + b64decode(m.group(2)))
+else:
+    sys.stdout.write(attrVal)
+</string>
+	<key>fallbackInput</key>
+	<string>line</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Decode Base 64 Value</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>text.ldif storage.value.base64.ldif
+storage.value.base64.ldif
+text.ldif storage.value.base64.ldif</string>
+	<key>uuid</key>
+	<string>C7F192E3-D6DB-4629-A24A-8CDAF6E186B0</string>
+</dict>
+</plist>
