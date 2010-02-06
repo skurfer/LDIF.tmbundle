@@ -1,0 +1,12 @@
+## LDIF TextMate Bundle ##
+
+This bundle adds LDIF support to TextMate.
+
+For more complete support, you may want to add something like this to the `CFBundleDocumentTypes` section in `TextMate.app/Contents/Info.plist`:
+
+    {   CFBundleTypeName = "LDAP Data Interchange Format";
+        CFBundleTypeExtensions = (ldif); 
+        CFBundleTypeIconFile = TMDocument; 
+    }, 
+
+You should make a backup copy of TextMate before you mess around inside it.
